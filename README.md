@@ -1,14 +1,11 @@
 # desafio-stn
 
- ##### IaaC para subir um Cluster EKS #####
+-   Atualizei meu código, removendo por hora o variables.tf, renomeando o main.tf para provider.tf, melhorando o EKS.tf, VPC.tf e sec-groups.tf.
 
-- Utilizei um curso da Alura como base para iniciar o projeto.
-(https://cursos.alura.com.br/course/infraestrutura-codigo-terraform-kubernetes)
+-   Utilizei 3 abordagens diferentes para a criação do cluster utilizando o Terraform, porém, mantive a metodologia KISS e apenas alterei algumas coisas, para que meu código não ficasse muito grande.
 
-- Fiz algumas edições nos módulos que peguei, e por enquanto o módulo de variáveis está vazio, 
-o módulo main só tem o provider e por enquanto os módulos EKS, sec-groups e VPC estão fechados.
+-   Criei um usuário IAM chamado terraform, e um aws profile para este usuário. as informações foram guardadas em 2 arquivos (.aws/config e .aws/credentials).
 
-- Com essa infraestrutura eu já consigo subir o cluster EKS e 3 instâncias, assim como a VPC e os grupos de segurança para o cluster.
-Também foi criado um endpoint de acesso privado para que eu me comunique com o cluster.
+-   O próximo passo é voltar na documentação oficial do EKS na AWS para checar se é necessária alguma instalação no cluster antes de seguir.
 
-- O próximo passo será criar um módulo de configuração para o cluster.
+-   Após isso irei seguir com a instalação e configuração do Prometheus no cluster.
