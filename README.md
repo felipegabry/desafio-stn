@@ -1,11 +1,9 @@
 # desafio-stn
 
--   Atualizei meu código, removendo por hora o variables.tf, renomeando o main.tf para provider.tf, melhorando o EKS.tf, VPC.tf e sec-groups.tf.
+-   Atualizei meu código, adicionando novamente o variables.tf.
 
--   Utilizei 3 abordagens diferentes para a criação do cluster utilizando o Terraform, porém, mantive a metodologia KISS e apenas alterei algumas coisas, para que meu código não ficasse muito grande.
+-   Renomeei o VPC.tf para vpc.tf e removi uma AZ, deixando apenas duas, também habilitei o dns_hostnames e o single_nat_gateway.
 
--   Criei um usuário IAM chamado terraform, e um aws profile para este usuário. as informações foram guardadas em 2 arquivos (.aws/config e .aws/credentials).
+-   Renomeei o EKS.tf para eks-cluster.tf e alterei os tipos de instância, adicionei os add-ons no módulo eks, adicionei Data Sources para autenticação no k8s e adicionei um módulo para instalar o metrics-server.
 
--   O próximo passo é voltar na documentação oficial do EKS na AWS para checar se é necessária alguma instalação no cluster antes de seguir.
-
--   Após isso irei seguir com a instalação e configuração do Prometheus no cluster.
+-   Criei o helm-releases.tf, ele utiliza o Data Source no eks-cluster.tf para se conectar com meu cluster e fazer as instalações, tem um recurso helm_release para o calico e um para o prometheus (que por default também instala o chart do grafana).
