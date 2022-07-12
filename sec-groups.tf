@@ -8,14 +8,14 @@ resource "aws_security_group" "ssh_cluster" {
 }
 
 #Entrada
-resource "aws_security_group_rule" "ssh_cluster_in" {
-  type              = "ingress"
-  from_port         = 22
-  to_port           = 22
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.ssh_cluster.id
-}
+# resource "aws_security_group_rule" "ssh_cluster_in" {
+#   type              = "ingress"
+#   from_port         = 22
+#   to_port           = 22
+#   protocol          = "tcp"
+#   cidr_blocks       = ["0.0.0.0/0"]
+#   security_group_id = aws_security_group.ssh_cluster.id
+# }
 
 #Saída
 resource "aws_security_group_rule" "ssh_cluster_out" {

@@ -11,16 +11,6 @@ provider "helm" {
   }
 }
 
-resource "helm_release" "calico" {
-  name  = "calico"
-  chart = "tigera-operator"
-  repository       = "https://projectcalico.docs.tigera.io/charts"
-  namespace        = "tigera-operator"
-  version          = "3.23.2"
-  create_namespace = true
-  wait             = true
-}
-
 resource "helm_release" "prometheus" {
   name             = "prometheus"
   chart            = "kube-prometheus-stack"
